@@ -1,0 +1,59 @@
+'aaaaaaaaa'
+
+Sub primeiroPrograma()
+    Dim v_nome As String
+    Dim v_curso As String
+    Dim v_faculdade As String
+    
+    v_nome = InputBox("Informe o seu nome")
+    v_curso = InputBox("Informe o curso")
+    v_faculdade = InputBox("Informe a faculdade")
+    
+    MsgBox ("Aluno " & v_nome & vbNewLine & _
+            "Curso " & v_curso & vbNewLine & _
+            "Faculdade " & v_faculdade)
+    
+End Sub
+
+Sub segundoPrograma()
+    Dim empregado As String
+    Dim salario As Double
+    
+    empregado = InputBox("Nome do empregado: ")
+    salario = InputBox("Salario empregado: ")
+    
+    Range("A1").Value = "Nome empreagado: " & empregado
+    Range("A2").Value = "Salario atual: " & salario
+    Range("A3").Value = "Salario multiplicado por 3: " & salario * 3
+
+End Sub
+
+Sub GetValor()
+    x = Worksheets("Planilha1").Range("A1").Value
+    MsgBox x
+End Sub
+
+Sub setValor()
+    Worksheets("Planilha1").Range("A1").Value = 3.21432143243243E+32
+End Sub
+
+Sub contadorBooks()
+    MsgBox Workbooks.Count
+End Sub
+
+Sub limpaCelula()
+    Range("A1").ClearContents
+End Sub
+
+Sub copyCell()
+    Worksheets("Planilha1").Activate
+    Range("A1").Copy Range("B2", "A20")
+End Sub
+
+Sub adicionaWorkbook()
+    Workbooks.Add
+End Sub
+
+Sub selectRange()
+    Range("A1:D6").Select
+End Sub
