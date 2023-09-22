@@ -1,1 +1,155 @@
 
+Sub DemoGoTo()
+    nome = InputBox("Digite o nome")
+    
+    If nome <> "Joaquim" Then
+        GoTo NomeErrado
+    End If
+    
+    MsgBox "Seja bem vindo Joaquim"
+    
+    Exit Sub
+    
+NomeErrado:
+    MsgBox "Desculpe Joaquim"
+End Sub
+
+Sub GetHora()
+    If Time < 0.5 Then
+        MsgBox ("Bom dia!")
+    End If
+    
+    If Time >= 0.5 Then
+        MsgBox ("Boa tarde")
+    End If
+End Sub
+
+Sub GetHora_2()
+    If Time < 0.5 Then
+        MsgBox ("Bom dia")
+    Else
+        MsgBox ("Boa tarde")
+    End If
+End Sub
+
+Sub GetHora_3()
+
+    Dim msg As String
+    
+    If Time < 0.5 Then msg = "Manhã"
+    If Time >= 0.5 And Time < 0.75 Then msg = "Tarde"
+    If Time >= 0.75 Then msg = "Noite"
+    
+    MsgBox "Boa " & msg
+End Sub
+
+Sub ExibeDesconto()
+    Dim quantidade As Integer
+    Dim desconto As Double
+    
+    quantidade = InputBox("Digite um valor: ")
+    If quantidade > 0 Then desconto = 0.1
+    If quantidade >= 25 Then desconto = 0.15
+    If quantidade >= 50 Then desconto = 0.2
+    If quantidade >= 75 Then desconto = 0.25
+    
+    MsgBox "Desconto: " & desconto
+End Sub
+
+
+Sub ExibeDesconto_2()
+    Dim quantidade As Integer
+    Dim desconto As Double
+    
+    quantidade = InputBox("Digite um valor: ")
+    If quantidade > 0 And quantidade < 25 Then
+        desconto = 0.1
+    ElseIf quantidade >= 25 And quantidade < 50 Then
+        desconto = 0.15
+    ElseIf quantidade >= 50 And quantidade < 75 Then
+        desconto = 0.2
+    ElseIf quantidade >= 75 Then
+        desconto = 0.25
+    End If
+    MsgBox ("desconto: ") & desconto
+End Sub
+
+
+Sub ExibeDesconto_3()
+    Dim quantidade As Integer
+    Dim desconto As Double
+    
+    quantidade = InputBox("digite um valor: ")
+    
+    Select Case quantidade
+        Case 0 To 24
+            desconto = 0.1
+        Case 25 To 49
+            desconto = 0.15
+        Case 50 To 74
+            desconto = 0.2
+        Case Is >= 75
+            desconto = 0.25
+    End Select
+    MsgBox ("Desconto: ") & desconto
+    
+End Sub
+
+
+Sub ExibeDesconto_4()
+    Dim quantidade As Integer
+    Dim desconto As Double
+    
+    quantidade = InputBox("Digite um valor: ")
+    
+    Select Case quantidade
+        Case 0 To 24: desconto = 0.1
+        Case 25 To 49: desconto = 0.15
+        Case 50 To 74: desconto = 0.2
+        Case Is >= 75: desconto = 0.25
+    End Select
+    MsgBox ("Desconto: ") & desconto
+    
+End Sub
+
+Sub VerificaCelula()
+    Dim msg As String
+    
+    Select Case IsEmpty(ActiveCell)
+        Case True
+            msg = "Está vazia"
+        Case Else
+            Select Case ActiveCell.HasFormula
+                Case True
+                    msg = "tem uma fórmula"
+                Case False
+                    Select Case IsNumeric(ActiveCell)
+                        Case True
+                            msg = "Tem um número"
+                        Case Else
+                            msg = "Tem texto"
+                    End Select
+            End Select
+    End Select
+    
+    MsgBox "Célula: " & ActiveCell.Address & " " & msg
+        
+        
+End Sub
+
+Sub teste1()
+    Dim valor_max As Double
+    Dim linha As Long
+    
+    valor_max = WorksheetFunction.Max(Range("A:A"))
+    MsgBox valor_max
+
+    For linha = 1 To Rows.Count
+        If (Range("A1").Offset(linha - 1, 0).Value = valor_max) Then
+        Range("A1").Offset(linha - 1, 0).Activate
+        MsgBox "valor máximo é a linha:" & linha
+        Exit For
+        End If
+    Next linha
+
+End Sub
