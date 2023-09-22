@@ -1,4 +1,3 @@
-
 Sub DemoGoTo()
     nome = InputBox("Digite o nome")
     
@@ -137,7 +136,17 @@ Sub VerificaCelula()
         
 End Sub
 
-Sub teste1()
+
+
+Sub preencherRange_2()
+    Dim contador As Long
+    
+    For contador = 0 To 19 Step 2
+        ActiveCell.Offset(contador, 0) = Rnd
+    Next contador
+End Sub
+
+Sub ExitForDemo()
     Dim valor_max As Double
     Dim linha As Long
     
