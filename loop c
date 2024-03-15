@@ -85,3 +85,47 @@ int main()
 
     return 0;
 }
+
+
+
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    printf("Digite quantas pessoas deseja calcular");
+    float maiorPeso, menorPeso, maiorAltura, menorAltura = 0.0;
+    float maiorImc, menorImc, mediaPesos, mediaAltura, mediaImc = 0.0;
+    float somaPeso, somaALtura, somaImc = 0.0;
+    float peso, altura, imc = 0.0
+    
+    printf("Digite o peso: ");
+    scanf("%f", &peso);
+    
+    printf("\nDigite a altura: ");
+    scanf("%f", &altura);
+    
+    if (peso > maiorPeso) maiorPeso = peso;
+    if (peso < menorPeso) menorPeso = peso;
+    if (altura > maiorAltura) maiorAltura = altura;
+    if (altura < menorAltura) menorAltura = altura;
+    
+    imc = peso / (altura * altura);
+    
+    if (imc > maiorImc) maiorImc = imc;
+    if (imc < menorImc) menorImc = imc;
+    
+    somaPeso += peso;
+    somaAltura += altura;
+    somaImc += imc;
+    
+
+    return 0;
+}
