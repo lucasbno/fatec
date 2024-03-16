@@ -129,3 +129,123 @@ int main()
 
     return 0;
 }
+
+#include <stdio.h>
+
+ int 
+main () 
+ { 
+float maiorPeso, menorPeso, maiorAltura, menorAltura = 0.0;
+  
+ 
+float maiorImc, menorImc, mediaPesos, mediaAltura, mediaImc = 0.0;
+  
+ 
+float somaPeso, somaAltura, somaImc = 0.0;
+  
+ 
+float peso, altura, imc = 0.0;
+  
+ 
+char condicao = 'N';
+
+int count = 0;
+  
+ 
+  do
+	
+	{
+	  
+ 
+printf ("\nDigite o peso: ");
+	  
+ 
+scanf ("%f", &peso);
+	  
+ 
+ 
+printf ("\nDigite a altura: ");
+	  
+ 
+scanf ("%f", &altura);
+	  
+ 
+ 
+if (peso > maiorPeso)
+		
+maiorPeso = peso;
+	  
+ 
+if (peso < menorPeso)
+		
+menorPeso = peso;
+	  
+ 
+if (altura > maiorAltura)
+		
+maiorAltura = altura;
+	  
+ 
+if (altura < menorAltura)
+		
+menorAltura = altura;
+	  
+ 
+ 
+imc = peso / (altura * altura);
+	  
+ 
+ 
+if (imc > maiorImc)
+		
+maiorImc = imc;
+	  
+ 
+if (imc < menorImc)
+		
+menorImc = imc;
+	  
+ 
+printf ("\nDeseja continuar? [S/N]");
+	  
+scanf (" %c", &condicao);
+somaPeso += peso;
+	  
+ 
+somaAltura += altura;
+	  
+ 
+somaImc += imc;
+
+count += 1;
+	  
+while (condicao == "S")
+		
+ 
+ 
+
+	
+ 
+}
+  
+ 
+ 
+ 
+ 
+mediaPeso = somaPeso / count;
+  
+ 
+mediaAltura = somaAltura / count;
+  
+ 
+mediaImc = somaImc / count;
+  
+ 
+ 
+ 
+return 0;
+  
+ 
+}
+  
+
