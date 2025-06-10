@@ -412,7 +412,7 @@ R: Pressione Ctrl+C ou Q.
 R: Lista todos os processos em execução.
 
 6. Instale o apache2 (caso ainda não tenha feito) e inicie o serviço.  
-R: `apt install apache2` e `service apache2 start`
+R: `apt install apache2` e `systemctl start apache2`
 
 7. Para filtrar a saída do comando da etapa 5, use grep para encontrar o serviço apache2.  
 R: `ps aux | grep apache2`
